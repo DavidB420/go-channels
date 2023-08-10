@@ -15,7 +15,7 @@ func main(){
 	bufChannel <- 67890
 
 	//Close the channel
-	close(bufChannel)
+	close(bufChannel) // if we would not close this, for loop will deadlock below
 	
 	//Iterate through all the items in the channel
 	for item := range bufChannel {

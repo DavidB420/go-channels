@@ -12,11 +12,12 @@ func main(){
         bufChannel := make (chan int, 2)
 
         //Send two consecutive values to the buffered channel
-		bufChannel <- 65535
-		bufChannel <- 12345
+	bufChannel <- 65535
+	bufChannel <- 12345
+	//bufChannel <- 67890 //this will cause deadlock
 
         //Output the received messages
         fmt.Println(<-bufChannel)
-		fmt.Println(<-bufChannel)
+	fmt.Println(<-bufChannel)
 
 }

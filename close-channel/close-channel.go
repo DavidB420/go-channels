@@ -9,6 +9,9 @@ func main(){
 	//Created a buffered channel with a capacity of 2
 	bufChannel := make(chan int, 2)
 
+	//Close channel prematurely before sending (will cause panic)
+	//close(bufChannel)
+
 	//Send two values to the buffered channel
 	bufChannel <- 65535
 	bufChannel <- 12345
