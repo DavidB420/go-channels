@@ -25,6 +25,9 @@ func main(){
 		channel2 <- 12345
 	}()
 
+	//Closing any of the channels will cause select to return 0
+	//close(channel1)
+	//close(channel2)
 	//Select statement that receives values from the two channels, first case should run
 	select {
 		case value := <-channel1:
