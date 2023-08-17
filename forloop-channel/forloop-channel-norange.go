@@ -14,8 +14,18 @@ func main(){
 		bufChannel <- i
 	}
 
+	//Uncomment this line for closer alternative to range
+	//close(bufChannel)
+
 	//Receive three values from the channel
+	/*var x int //uncomment these lines for closer alternative to range
+	for ok := true; ok;{*/
 	for i := 0; i < 3; i++ {
+	        /*x, ok = <-bufChannel //uncomment these lines
+	        if !ok {
+	                break
+	        }
+	        fmt.Println(x)*/
 		fmt.Println(<-bufChannel)
 	}
 

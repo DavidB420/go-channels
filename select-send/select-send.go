@@ -33,6 +33,4 @@ func main(){
 	case channel2 <- 12345:
 	}
 
-	//Give time for one of the goroutines to finish
-	time.Sleep(time.Second * 1)
 }
